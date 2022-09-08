@@ -54,6 +54,16 @@ data(){
 components: {
 
 },
+watch: {
+  '$route': {
+     handler: function(){
+      this.inputValue = ''
+      this.filteredList = []
+     },
+     immediate: true,
+     deep: true
+   }
+},
 methods: {
   openSuggestion(l){
 

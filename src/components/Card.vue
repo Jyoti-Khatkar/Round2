@@ -63,6 +63,10 @@
             '$route.query.id': {
                 handler: function(){
                     if(this.$route.query.id){
+                        var lights = document.getElementsByClassName("myActiveClass");
+                        while (lights.length){
+                            lights[0].className = lights[0].className.replace(/\bmyActiveClass\b/g, "");
+                        }
                         this.scrollToElement(this.$route.query.id);
                     }
                     
